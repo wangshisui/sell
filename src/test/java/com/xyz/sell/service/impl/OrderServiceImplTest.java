@@ -30,9 +30,11 @@ public class OrderServiceImplTest {
     public void create() throws Exception {
 
         OrderDTO orderDTO=new OrderDTO();
-        orderDTO.setBuyerName("小阿鑫");
-        orderDTO.setBuyerAddress("济南");
-        orderDTO.setBuyerPhone("178654662564");
+        orderDTO.setBuyerName("小张");
+        orderDTO.setBuyerAddress("青岛");
+        orderDTO.setBuyerPhone("2323121212");
+        orderDTO.setOrderStatus(1);
+        orderDTO.setPayStatus(1);
         orderDTO.setBuyerOpenid(BUYER_OPENID);
 
         List<OrderDetail> cartDtoList=new ArrayList<>();
