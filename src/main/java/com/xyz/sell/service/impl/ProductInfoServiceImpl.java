@@ -2,7 +2,10 @@ package com.xyz.sell.service.impl;
 
 import com.xyz.sell.dao.ProductInfoDao;
 import com.xyz.sell.dataobject.ProductInfo;
+import com.xyz.sell.dto.CartDto;
 import com.xyz.sell.enums.ProductStatusEnum;
+import com.xyz.sell.enums.ResultEnum;
+import com.xyz.sell.exception.SellException;
 import com.xyz.sell.service.ProductInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -38,6 +41,27 @@ public class ProductInfoServiceImpl implements ProductInfoService {
 
     @Override
     public ProductInfo save(ProductInfo productInfo) {
-        return null;
+        return productInfoDao.save(productInfo);
+    }
+
+    @Override
+    public void increaseStock(List<CartDto> cartDtoList) {
+
+    }
+
+    @Override
+    public void decreaseStock(List<CartDto> cartDtoList) {
+
+          for(CartDto cartDto:cartDtoList){
+            ProductInfo productInfo=  productInfoDao.findOne(cartDto.getProductId());
+            if(productInfo==null){
+                throw new SellException(ResultEnum.PRIDUCT_NOT_EXITS);
+            }
+            Integer result=productInfo.getProductStock()-cartDto.getProductQuantity();
+              if(result<0){
+                  throw new SellException(ResultEnum.PRODUCT_NOT_ERROR);
+              }
+              productInfo.setProductStock(result);
+          }
     }
 }
