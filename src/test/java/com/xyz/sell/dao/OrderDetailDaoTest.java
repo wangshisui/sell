@@ -1,6 +1,7 @@
 package com.xyz.sell.dao;
 
 import com.xyz.sell.dataobject.OrderDetail;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -37,6 +39,8 @@ public class OrderDetailDaoTest {
     }
     @Test
     public void findByOrderId() throws Exception {
+       List<OrderDetail> orderDetailList= orderDetailDao.findByOrderId("2222");
+        Assert.assertNotEquals(0,orderDetailList.size());
 
 
     }

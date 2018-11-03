@@ -1,7 +1,6 @@
 package com.xyz.sell.dao;
 
 import com.xyz.sell.dataobject.OrderDetail;
-import com.xyz.sell.dataobject.OrderMaster;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
@@ -13,5 +12,5 @@ import java.util.List;
  */
 public interface OrderDetailDao extends JpaRepository<OrderDetail,String> {
 
-    List<OrderMaster> findByOrderId(String orderId);
+    List<OrderDetail> findByOrderId(String orderId);
 }
