@@ -213,4 +213,15 @@ public class OrderServiceImpl implements OrderService {
 
         return orderDTO;
     }
+
+    @Override
+    public Page<OrderDTO> findList(Pageable pageable) {
+        Page<OrderMaster> orderMasterOage=orderMasterDao.findAll(pageable);
+        //使用一个转换器将OrderMaster 转成orderDto
+        List<OrderDTO> orderDTOList=OrderMaster2OrderDto.convert(orderMasterOage.getContent());
+        Page<OrderDTO> orderDTOPage=new PageImpl<OrderDTO>(orderDTOList,pageable,orderMasterOage.getTotalPages());
+
+
+        return orderDTOPage;
+    }
 }

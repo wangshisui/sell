@@ -99,5 +99,9 @@ public class OrderServiceImplTest {
         System.out.println(resu.getPayStatus()+"---");
        Assert.assertEquals(PayStatusEnum.SUCCESS.getCode(),resu.getPayStatus());
     }
-
+    @Test
+    public void list() throws Exception{
+        PageRequest pageRequest=new PageRequest(0,2);
+        Page<OrderDTO> orderDTOPage=orderService.findList(pageRequest);
+    }
 }

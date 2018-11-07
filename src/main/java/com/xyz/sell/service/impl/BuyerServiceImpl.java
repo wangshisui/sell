@@ -6,12 +6,14 @@ import com.xyz.sell.exception.SellException;
 import com.xyz.sell.service.BuyerService;
 import com.xyz.sell.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  * @Author:zhangyx
  * @Date:Created in 15:592018/11/3
  * @Modified By:
  */
+@Service
 public class BuyerServiceImpl implements BuyerService {
 
     @Autowired
