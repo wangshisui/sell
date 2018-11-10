@@ -28,8 +28,8 @@ public class OrderDetailDaoTest {
     @Test
     public void saveTest(){
         OrderDetail orderDetail=new OrderDetail();
-        orderDetail.setDetailId("444");
-        orderDetail.setOrderId("1221");
+        orderDetail.setDetailId("22222");
+        orderDetail.setOrderId("12121221");
         orderDetail.setProductIcon("xxxxxxxx");
         orderDetail.setProductName("烤鸭");
         orderDetail.setProductId("1111");

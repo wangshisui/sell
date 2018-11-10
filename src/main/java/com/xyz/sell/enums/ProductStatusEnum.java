@@ -1,5 +1,6 @@
 package com.xyz.sell.enums;
 
+import com.xyz.sell.utils.EnumUtil;
 import lombok.Getter;
 
 /**
@@ -8,7 +9,7 @@ import lombok.Getter;
  * @Modified By:
  */
 @Getter
-public enum ProductStatusEnum {
+public enum ProductStatusEnum implements CodeEnum {
     UP(0,"在架"),
     DOWN(1,"下架");
 

@@ -37,7 +37,7 @@ public class OrderServiceImplTest {
         OrderDTO orderDTO=new OrderDTO();
         orderDTO.setBuyerName("小王");
         orderDTO.setBuyerAddress("杭州");
-        orderDTO.setBuyerPhone("17865645271");
+        orderDTO.setBuyerPhone("1786566767271");
         orderDTO.setOrderStatus(1);
         orderDTO.setBuyerOpenid(BUYER_OPENID);
 
